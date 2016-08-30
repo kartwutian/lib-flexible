@@ -52,10 +52,11 @@
     }
 
     docEl.setAttribute('data-dpr', dpr);
+    docEl.setAttribute('true-dpr', win.devicePixelRatio);
     if (!metaEl) {
         metaEl = doc.createElement('meta');
         metaEl.setAttribute('name', 'viewport');
-        metaEl.setAttribute('content', 'initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
+        metaEl.setAttribute('content', 'width=device-width, initial-scale=' + scale + ', maximum-scale=' + scale + ', minimum-scale=' + scale + ', user-scalable=no');
         if (docEl.firstElementChild) {
             docEl.firstElementChild.appendChild(metaEl);
         } else {
